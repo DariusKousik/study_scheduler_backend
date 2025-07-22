@@ -31,6 +31,10 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+def root():
+    return {"message": "Backend is running successfully!"}
+
 # ✅ Startup: Train model + Start Scheduler
 @app.on_event("startup")
 def startup():
